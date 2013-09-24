@@ -64,10 +64,12 @@
 
 echo &quot;Running Ansible against: $FQDN&quot;
 
+# http://www.ansibleworks.com/docs/gettingstarted.html#a-note-about-host-key-checking 
+export ANSIBLE_HOST_KEY_CHECKING=False
+
 pushd ansible-examples/nginx
     ansible-playbook -i inventory.py main.yml
-popd
-</command>
+popd</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
